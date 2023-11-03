@@ -7,6 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Mail\Mailables\Attachment;
 use Illuminate\Queue\SerializesModels;
 
 class DemoMail extends Mailable
@@ -47,6 +48,8 @@ class DemoMail extends Mailable
      */
     public function attachments(): array
     {
-        return [];
+        return [
+            Attachment::fromPath('C:\Users\PC3\Downloads\Laravel-Coding guidelines V1.0.pdf', 'laravel.pdf'),
+        ];
     }
 }
